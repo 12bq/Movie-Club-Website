@@ -1,0 +1,118 @@
+:root {
+  --slate-900: #0f172a;
+  --slate-800: #1e293b;
+  --slate-700: #334155;
+  --indigo-500: #6366f1;
+  --indigo-600: #4f46e5;
+  --text-light: #f1f5f9;
+  --text-dim: #94a3b8;
+}
+
+body {
+  background-color: var(--slate-900);
+  color: var(--text-light);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  margin: 0;
+}
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Glassmorphism Sidebar */
+.sidebar {
+  width: 260px;
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(12px);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.sidebar-logo {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--indigo-500);
+  text-decoration: none;
+  margin-bottom: 3rem;
+  display: block;
+  letter-spacing: -0.025em;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-item {
+  color: var(--text-dim);
+  text-decoration: none;
+  padding: 0.8rem 1rem;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-item:hover, .nav-item.active {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--indigo-500);
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem 3rem;
+  width: calc(100% - 260px);
+}
+
+/* Bento Grid */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+/* Movie Card Styling */
+.movie-card {
+  background: var(--slate-800);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.movie-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+}
+
+.movie-info {
+  padding: 1.25rem;
+}
+
+.movie-info h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  color: var(--text-light);
+  font-weight: 600;
+}

@@ -16,7 +16,7 @@ function Favorites() {
         </div>
       </div>
     );
-  }
+  } // xdddd
 
   return (
     <div className="favorites-empty">
